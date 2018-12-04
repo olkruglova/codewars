@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Create Phone Number</title>
+  </head>
+  <body>
+
+  <script>
+    function createPhoneNumber(numbers){
+        let phoneNumber = '';
+        for (x in numbers) {
+            phoneNumber += numbers[x];
+        }
+        let first = phoneNumber.slice(0, 3);
+        let second = phoneNumber.slice(3, 6);
+        let third = phoneNumber.slice(6);
+        phoneNumber = '(' + first + ') ' + second + '-' + third;
+
+        return phoneNumber;
+    }
+createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]);
+
+  </script>
+  
+  <h2>Create Phone Number</h2>
+
+  <p>Write a function that accepts an array of 10 integers (between 0 and 9), that returns a string of those numbers in the form of a phone number.
+    <br>
+    <b>Example:</b><br>
+    <i>createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) // => returns "(123) 456-7890"</i><br>
+    The returned format must be correct in order to complete this challenge. <br>
+    Don't forget the space after the closing parentheses!
+  </p>
+
+  </body>
+</html>
