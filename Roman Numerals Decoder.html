@@ -1,3 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Array.diff</title>
+
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </head>
+  <body>
+<style>
+div, p, h2 {
+  margin-left: 20px;
+}
+</style>
 <script>
 function solution(roman){
     // complete the solution by transforming the 
@@ -27,7 +48,7 @@ function solution(roman){
       result += a;
     }
   }
-    return result;
+    //return result;
     console.log(result);
   }
 
@@ -35,3 +56,83 @@ function solution(roman){
   solution('MXL'); //1040
   solution('CMVII') //907
   </script>
+
+<h2>Roman Numerals Decoder</h2>
+
+<p>Create a function that takes a Roman numeral as its argument and returns its value as a numeric decimal integer. You don't need to validate the form of the Roman numeral.<br>
+
+  Modern Roman numerals are written by expressing each decimal digit of the number to be encoded separately, starting with the leftmost digit and skipping any 0s. So 1990 is rendered "MCMXC" (1000 = M, 900 = CM, 90 = XC) and 2008 is rendered "MMVIII" (2000 = MM, 8 = VIII). The Roman numeral for 1666, "MDCLXVI", uses each letter in descending order. <br>
+  
+  Example:<br>
+  
+  solution('XXI'); // should return 21<br>
+  Help:<br>
+  </p>
+  <div class="row">
+    <div class="col-md-3">
+      Symbol
+    </div>
+    <div class="col-md-3">
+      Value
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      I
+    </div>
+    <div class="col-md-3">
+      1
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      V
+    </div>
+    <div class="col-md-3">
+      5
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      X
+    </div>
+    <div class="col-md-3">
+      10
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      L
+    </div>
+    <div class="col-md-3">
+      50
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      C
+    </div>
+    <div class="col-md-3">
+      100
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      D
+    </div>
+    <div class="col-md-3">
+      500
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      M
+    </div>
+    <div class="col-md-3">
+      1000
+    </div>
+  </div>
+
+
+</body>
+</html>
