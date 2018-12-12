@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Find the unique number</title>
+  </head>
+  <body>
+<style>
+div, p, h2 {
+  margin-left: 20px;
+}
+</style>
+<script>
+function findUniq(arr) {
+   for (x in arr) {
+     if (arr.indexOf(arr[x]) == arr.lastIndexOf(arr[x])){
+       console.log(arr[x]);
+     }
+   }
+}
+
+  findUniq([ 0, 1, 0 ]); // 1;
+  findUniq([ 1, 1, 1, 2, 1, 1 ]); // 2;
+  findUniq([ 3, 10, 3, 3, 3 ]); // 10;
+  </script>
+
+<h2>Find the unique number</h2>
+
+<p>There is an array with some numbers. All numbers are equal except for one. Try to find it!<br>
+
+  findUniq([ 1, 1, 1, 2, 1, 1 ]) === 2<br>
+  findUniq([ 0, 0, 0.55, 0, 0 ]) === 0.55<br>
+  It’s guaranteed that array contains more than 3 numbers.<br>
+  
+  The tests contain some very huge arrays, so think about performance.<br>
+  
+  </p>
+
+
+</body>
+</html>
