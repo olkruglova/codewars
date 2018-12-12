@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Simple Pig Latin</title>
+  </head>
+  <body>
+<style>
+div, p, h2 {
+  margin-left: 20px;
+}
+</style>
+<script>
+function pigIt(str){
+  let newStr = str.split(" ");
+  let format = /^[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
+  let result = [];
+  
+  
+   for (var i = 0; i < newStr.length; i++){
+      
+          let a = newStr[i].slice(0, 1);
+          let b = newStr[i].slice(1);
+          c = b + a
+            if (a.match(format)) {
+              result.push(c); 
+            } else {
+              result.push(c + 'ay');
+            }
+   }
+   result = result.join(' ');
+   //console.log(result);
+   return result;
+}
+
+pigIt('Pig latin is cool'); // 'igPay atinlay siay oolcay'
+pigIt('This is my string'); //'hisTay siay ymay tringsay'
+  </script>
+
+<h2>Simple Pig Latin</h2>
+
+<p>Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched.<br>
+
+  Examples<br>
+  pigIt('Pig latin is cool'); // igPay atinlay siay oolcay <br>
+  pigIt('Hello world !');     // elloHay orldway ! <br>
+  </p>
+
+
+</body>
+</html>
