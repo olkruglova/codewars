@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title Case</title>
+  </head>
+  <body>
+<style>
+div, p, h2 {
+  margin-left: 20px;
+}
+</style>
+<script>
+function titleCase(title, minorWords) {
+    if (title == '') {
+      return '';
+    }
+    let str = '', a, b;
+    title = title.toLowerCase().split(' ');
+    if (minorWords !== undefined) {
+      minorWords = minorWords.toLowerCase().split(' ');
+    }
+      for (x in title) {
+        if (minorWords == undefined) {
+          a = title[x].charAt(0).toUpperCase() + title[x].slice(1); 
+          str += a + ' ';
+        } else {
+          if (!minorWords.includes(title[x]) || x == 0) {
+            b = title[x].charAt(0).toUpperCase() + title[x].slice(1); 
+            str += b + ' ';
+          } else {
+            str += title[x] + ' ';
+
+          }
+  	}
+  }
+    str = str.trim();
+    console.log(str);
+}
+titleCase(''); // ''
+titleCase('a clash of KINGS', 'a an the of'); // 'A Clash of Kings';
+titleCase('THE WIND IN THE WILLOWS', 'The In'); //'The Wind in the Willows';
+titleCase('the quick brown fox'); //'The Quick Brown Fox';
+  </script>
+
+<h2>Title Case</h2>
+
+<p>A string is considered to be in title case if each word in the string is either (a) capitalised (that is, only the first letter of the word is in upper case) or (b) considered to be an exception and put entirely into lower case unless it is the first word, which is always capitalised.
+
+  Write a function that will convert a string into title case, given an optional list of exceptions (minor words). The list of minor words will be given as a string with each word separated by a space. Your function should ignore the case of the minor words string -- it should behave in the same way even if the case of the minor word string is changed.
+  
+  ###Arguments (Haskell)<br>
+  
+  First argument: space-delimited list of minor words that must always be lowercase except for the first word in the string.
+  Second argument: the original string to be converted.
+  ###Arguments (Other languages) <br>
+  
+  First argument (required): the original string to be converted.
+  Second argument (optional): space-delimited list of minor words that must always be lowercase except for the first word in the string. The JavaScript/CoffeeScript tests will pass undefined when this argument is unused.
+  <br>###Example <br>
+  
+  titleCase('a clash of KINGS', 'a an the of') // should return: 'A Clash of Kings'<br>
+  titleCase('THE WIND IN THE WILLOWS', 'The In') // should return: 'The Wind in the Willows'<br>
+  titleCase('the quick brown fox') // should return: 'The Quick Brown Fox'
+  </p>
+
+
+</body>
+</html>
