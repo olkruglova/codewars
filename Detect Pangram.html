@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Detect Pangram</title>
+  </head>
+  <body>
+
+  <script>
+    function isPangram(string){
+if (new Set(string.toLowerCase().match(/[a-z]/gi)).size === 26) {
+    //console.log (new Set(string.toLowerCase().match(/[a-z]/gi)))
+    //return true;
+    console.log(string + ' - This is a pangram');
+ } else {
+    //return false;
+    //console.log (new Set(string.toLowerCase().match(/[a-z]/gi)))
+    console.log(string + ' - This is not a pangram');
+ }
+ }
+
+isPangram("The quick brown fox jumps over the lazy dog."); // true
+isPangram("This is not a pangram."); // false
+  </script>
+  
+  <h2>Detect Pangram</h2>
+
+  <p>A pangram is a sentence that contains every single letter of the alphabet at least once. <br> 
+    For example, the sentence "The quick brown fox jumps over the lazy dog" is a pangram, because it uses the letters A-Z at least once (case is irrelevant). <br>
+
+    Given a string, detect whether or not it is a pangram. Return True if it is, False if not. Ignore numbers and punctuation.
+  </p>
+
+  </body>
+</html>
