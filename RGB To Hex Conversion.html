@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>RGB To Hex Conversion</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+  </head>
+  <body>
+<style>
+div, p, h2 {
+  margin-left: 20px;
+}
+</style>
+<script>
+
+function rgb(r, g, b){
+  let arr = [r, g, b], a, c;
+  let res = '';
+  let nums = {
+  10: 'A',
+  11: 'B',
+  12: 'C',
+  13: 'D', 
+  14: 'E',
+  15: 'F'
+  }
+  for (x in arr) {
+    if (arr[x] > 255) {
+      for(var i=0; i<3; i++) {
+        res += 'FF';
+      }
+      return res;
+    }
+    if (arr[x] <= 0) {
+    for(var i=0; i<3; i++) {
+        res += '00';
+      }
+      return res;
+    } else {
+        a = Math.trunc(arr[x] / 16);
+        
+        if (0 < a && a < 10) {
+          res += a;
+        } 
+      
+        else {
+          res += nums[a];
+        }
+        c = arr[x] - (a * 16);
+        res += nums[c];
+    }
+  }
+  return res;
+}
+
+rgb(255, 255, 255) // returns FFFFFF
+rgb(255, 255, 300) // returns FFFFFF
+rgb(0,0,0) // returns 000000
+rgb(148, 0, 211) // returns 9400D3
+
+
+  </script>
+
+<h2>RGB To Hex Conversion</h2>
+
+<p>The rgb() method is incomplete. Complete the method so that passing in RGB decimal values will result in a hexadecimal representation being returned. <br>The valid decimal values for RGB are 0 - 255. Any (r,g,b) argument values that fall out of that range should be rounded to the closest valid value.<br>
+
+  <b>The following are examples of expected output values:</b><br>
+  
+  <code>rgb(255, 255, 255) // returns FFFFFF<br>
+  rgb(255, 255, 300) // returns FFFFFF<br>
+  rgb(0,0,0) // returns 000000<br>
+  rgb(148, 0, 211) // returns 9400D3</code>
+  </p>
+
+
+</body>
+</html>
