@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Extended weekends</title>
+
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </head>
+  <body>
+<style>
+div, p, h2 {
+  margin-left: 20px;
+}
+</style>
+<script>
+function solve(a, b){
+    let x, arr = [], newArr = [], y;
+    let months = ['Jan', 'Fab', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    for (var i=a; i<=b; i++){
+      for(var j=0; j<12; j++) {
+        x = new Date(i, j, 1).getDay();
+        y = new Date(i, j+1, 0).getDay();
+        if (x == 5 && y == 0) {
+          arr.push(months[j]);
+        }
+      }
+  }
+  newArr.push(arr[0], arr[arr.length-1], arr.length);
+  
+  console.log(newArr);
+  //return arr;
+}
+solve(2016,2020); //["Jan","May",5]);
+solve(1900,1950); //["Mar","Dec",51]);
+solve(1800,2500); //["Aug","Oct",702]);
+  </script>
+
+<h2>Extended weekends</h2>
+
+<p>If the first day of the month is a Friday, it is likely that the month will have an Extended Weekend. That is, it could have five Fridays, five Saturdays and five Sundays.<br>
+
+  In this Kata, you will be given a start year and an end year. Your task will be to find months that have extended weekends and return:<br>
+  
+  - The first and last month in the range that has an extended weekend<br>
+  - The number of months that have extended weekends in the range, inclusive of start year and end year.<br>
+  
+  <br><b>For example:</b><br>
+  
+  <code>solve(2016,2020) = ["Jan","May",5]. The months are: Jan 2016, Jul 2016, Dec 2017, Mar 2019 and May 2020</code></p>
+
+
+</body>
+</html>
