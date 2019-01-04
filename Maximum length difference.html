@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Maximum Length Difference</title>
+
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </head>
+  <body>
+<style>
+div, p, h2 {
+  margin-left: 20px;
+}
+</style>
+<script>
+function mxdiflg(a1, a2) {
+    let a = [], x, y, max;
+    if (a1.length == 0 || a2.length == 0) {
+      return -1;
+    } else {
+    
+    for (x in a1) {
+      for (y in a2) {
+        a.push(Math.abs(a1[x].length - a2[y].length));
+      }
+    }
+    max = Math.max(...a);
+    }
+    //return max;
+    console.log(max);
+}
+var s1 = ["hoqq", "bbllkw", "oox", "ejjuyyy", "plmiis", "xxxzgpsssa", "xxwwkktt", "znnnnfqknaz", "qqquuhii", "dvvvwz"];
+var s2 = ["cccooommaaqqoxii", "gggqaffhhh", "tttoowwwmmww"];
+mxdiflg(s1, s2); // 13;
+  </script>
+
+<h2>Maximum Length Difference</h2>
+
+<p>You are given two arrays a1 and a2 of strings. Each string is composed with letters from a to z. Let x be any string in the first array and y be any string in the second array.<br>
+
+  Find max(abs(length(x) − length(y)))<br>
+  
+  If a1 and/or a2 are empty return -1 in each language except in Haskell (F#) where you will return Nothing (None).
+  
+  <br><b>#Example:</b><br>
+  <code>
+  a1 = ["hoqq", "bbllkw", "oox", "ejjuyyy", "plmiis", "xxxzgpsssa", "xxwwkktt", "znnnnfqknaz", "qqquuhii", "dvvvwz"]<br>
+  a2 = ["cccooommaaqqoxii", "gggqaffhhh", "tttoowwwmmww"]<br>
+  mxdiflg(a1, a2) --> 13 </code>
+
+</body>
+</html>
