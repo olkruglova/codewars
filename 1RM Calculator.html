@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>1RM Calculator</title>
+  </head>
+  <body>
+<style>
+div, p, h2 {
+  margin-left: 20px;
+}
+</style>
+<script>
+function calculate1RM(w, r){
+var e, m, l;
+if (r == 0) {
+  return 0;
+}
+if (r == 1) {
+  return w;
+}
+else {
+  e = (w * (1 + (r / 30))).toFixed();
+  m = ((100 * w) / (101.3 - 2.67123 * r)).toFixed();
+  l = (w * Math.pow(r, 0.10)).toFixed();
+}
+return Math.max(e, m, l);
+
+}
+  </script>
+
+<h2>1RM Calculator</h2>
+
+<p>You just got done with your set at the gym, and you are wondering how much weight you could lift if you did a single repetition.<br> Thankfully, a few scholars have devised formulas for this purpose (from Wikipedia) :<br>
+
+  Epley<br>
+  <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d6b2b0a5969fc4d1cc15870a866de150f4459198" alt=""><br>
+  McGlothin<br>
+  <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/27eee0f0bd7f72e0283605049337449b9113e712" alt=""><br>
+  Lombardi<br>
+  <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b5ed18f6c4a92ad895f9f822cba42fcd942f3b27" alt=""><br>
+  Your function will receive a weight w and a number of repetitions r and must return your projected one repetition maximum. <br>Since you are not sure which formula to use and you are feeling confident, your function will return the largest value from the three formulas shown above, rounded to the nearest integer. <br>However, if the number of repetitions passed in is 1 (i.e., it is already a one rep max), your function must return w. Also, if the number of repetitions passed in is 0 <br>(i.e., no repetitions were completed), your function must return 0.
+
+
+</body>
+</html>
