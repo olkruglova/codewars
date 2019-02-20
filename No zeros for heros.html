@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>No zeros for heros</title>
+  </head>
+  <body>
+<style>
+div, p, h2 {
+  margin-left: 20px;
+}
+</style>
+<script>
+function noBoringZeros(n) {
+  if (n === 0) {
+    return 0;
+  }
+  let row = Array.from(n.toString()).reverse(), 
+      x;
+      
+  for ( x in row ) {   
+   if (row[x] != 0) {
+     let int = row.splice(row.indexOf(row[x]), row.length).reverse().join('');
+     console.log(parseInt(int));
+   }
+}}
+
+noBoringZeros(1450); // 145
+noBoringZeros(960000); // 96
+noBoringZeros(1050); // 105
+noBoringZeros(-1050); // -105
+noBoringZeros(-105); // -105
+noBoringZeros(0); // 0
+
+  </script>
+
+<h2>No zeros for heros</h2>
+
+<p>Numbers ending with zeros are boring.<br>
+
+  They might be fun in your world, but not here. <br>
+
+  Get rid of them. Only the ending ones.</p>
+ <code>1450 -> 145<br>
+  960000 -> 96<br>
+  1050 -> 105<br>
+  -1050 -> -105</code>
+<p>Zero alone is fine, don't worry about it. Poor guy anyway</p>
+</body>
+</html>
